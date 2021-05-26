@@ -1,13 +1,24 @@
 // Step 1: Import React
 import * as React from 'react'
-import Layout from '../components/layout'
-// Step 2: Define your component
+// components
+import GlobalStyle from '../components/GlobalStyle'
+import Navbar from '../components/Navbar'
+import EntriesLibrary from '../components/Library'
+import Entry from '../components/Entry'
+
 const IndexPage = () => {
   return (
-    <Layout pageTitle="Home Page">
-      <p>I'm making this by following the Gatsby tutorial</p>
-    </Layout>
+    <div>
+      <GlobalStyle />
+
+      <Navbar />
+      <EntriesLibrary title={'Recent Entries'} />
+      <Entry title={'Moving to Japan'} date={'5/26/21'} wordCount={50} />
+
+    </div>
+
   )
 }
-// Step 3: Export your component
+
+
 export default IndexPage
