@@ -1,29 +1,24 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+// Step 1: Import React
+import * as React from 'react'
+// components
+import GlobalStyle from '../components/GlobalStyle'
+import Navbar from '../components/Navbar'
+import EntriesLibrary from '../components/Library'
+import Entry from '../components/Entry'
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+const IndexPage = () => {
+  return (
+    <div>
+      <GlobalStyle />
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+      <Navbar />
+      <EntriesLibrary title={'Recent Entries'} />
+      <Entry title={'Moving to Japan'} date={'5/26/21'} wordCount={50} />
+
+    </div>
+
+  )
+}
+
 
 export default IndexPage
